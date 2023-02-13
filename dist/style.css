@@ -1,5 +1,7 @@
 /* General */
 
+@import url('https://fonts.googleapis.com/css?family=Alegreya Sans');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +9,7 @@
 }
 
 html, body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Alegreya Sans','Courier New', Courier, monospace;
     font-size: 10px;
 }
 
