@@ -15,22 +15,25 @@ const pressure = document.querySelector(".pressure > .data");
 const bgImages = ["media/bg/clear.png", "media/bg/rainy.png", "media/bg/snowy.png", "media/bg/sunny.png"];
 
 input.onkeydown = (e) => {
-    if (e.key == "Enter") {
-        renderPage(getWeather(input.value));
-    }
+    if(e.key == "Enter") renderPage(getWeather(input.value));
 }
 
 async function getWeather(city) {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=16cee363107451176fe52b1753cbc50c&units=metric`);
     const data = await response.json();
     console.log(data);
-        
+    
+    if (data.cod == "404") {
+        return 0;
+    }
     return data;
 }
 
 async function renderPage(dataPrm) {
     const data = await dataPrm;
     
+    if (!data) return;
+
     city.innerHTML = data.name;
     time.innerHTML =  new Date().toLocaleString();
     temp.innerHTML = data.main.temp + "&#8451;";
