@@ -40,9 +40,9 @@ async function renderPage(dataPrm) {
 
     city.innerHTML = data.name;
     time.innerHTML =  new Date().toLocaleString();
-    temp.innerHTML = data.main.temp + "&#8451;";
+    temp.innerHTML = Math.round(data.main.temp) + "&#8451;";
     weather.innerHTML = data.weather[0].main;
-    feelslike.innerHTML = data.main.feels_like + "&#8451;";
+    feelslike.innerHTML = Math.round(data.main.feels_like) + "&#8451;";
     wind.innerHTML = data.wind.speed + "km/h";
     humidity.innerHTML = data.main.humidity + "%";
     pressure.innerHTML = data.main.pressure + "hPa";
