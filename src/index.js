@@ -3,6 +3,7 @@ const body = document.querySelector("body");
 const city = document.querySelector(".city");
 const time = document.querySelector(".time");
 const temp = document.querySelector(".temp");
+const img = document.querySelector(".main > img");
 const weather = document.querySelector(".weather");
 
 const input = document.querySelector("input");
@@ -43,11 +44,26 @@ async function renderPage(dataPrm) {
     humidity.innerHTML = data.main.humidity + "%";
     pressure.innerHTML = data.main.pressure + "hPa";
 
-    if (data.weather[0].main == "Thunderstorm" || data.weather[0].main == "Drizzle" || data.weather[0].main == "Rain" || data.weather[0].main == "Clouds") {
-        body.style.backgroundImage = `url(${bgImages[1]})`;
-    } else if (data.weather[0].main == "Clear") {
+    if (data.weather[0].main == "Clear") {
+        img.src = "media/ico/mainclear.png";
         body.style.backgroundImage = `url(${bgImages[0]})`;
-    } else if (data.weather[0].main == "Snow" || data.weather[0].main == "Atmosphere") {
+    } else if (data.weather[0].main == "Clouds") {
+        img.src = "media/ico/maincloud.png";
+        body.style.backgroundImage = `url(${bgImages[1]})`;
+    } else if (data.weather[0].main == "Atmosphere") {
+        img.src = "media/ico/mainatmosphere.png";
+        body.style.backgroundImage = `url(${bgImages[2]})`;
+    } else if (data.weather[0].main == "Rain") {
+        img.src = "media/ico/mainrain.png";
+        body.style.backgroundImage = `url(${bgImages[1]})`;
+    } else if (data.weather[0].main == "Drizzle") {
+        img.src = "media/ico/maindrizzle.png";
+        body.style.backgroundImage = `url(${bgImages[1]})`;
+    } else if (data.weather[0].main == "Thunderstorm") {
+        img.src = "media/ico/mainthunderstorm.png";
+        body.style.backgroundImage = `url(${bgImages[1]})`;
+    } else if (data.weather[0].main == "Snow") {
+        img.src = "media/ico/mainsnow.png";
         body.style.backgroundImage = `url(${bgImages[2]})`;
     }
 }
