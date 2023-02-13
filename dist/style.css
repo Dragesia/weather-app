@@ -58,6 +58,10 @@ input:focus {
     font-weight: bolder;
 }
 
+.main > img {
+    margin: -15px;
+}
+
 .weather {
     font-size: 2.5rem;
 }

@@ -16,7 +16,10 @@ const pressure = document.querySelector(".pressure > .data");
 const bgImages = ["media/bg/clear.png", "media/bg/rainy.png", "media/bg/snowy.png", "media/bg/sunny.png"];
 
 input.onkeydown = (e) => {
-    if(e.key == "Enter") renderPage(getWeather(input.value));
+    if(e.key == "Enter") {
+        renderPage(getWeather(input.value));
+        input.value = "";
+    }
 }
 
 async function getWeather(city) {
