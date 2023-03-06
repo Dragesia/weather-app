@@ -2,15 +2,28 @@
 
 @import url('https://fonts.googleapis.com/css?family=Alegreya Sans');
 
+@font-face {
+    font-family: bubble;
+    src: url(media/fonts/BubbleboddyNeue-Thin\ Trial.ttf);
+}
+
+@font-face {
+    font-family: nexa;
+    src: url(media/fonts/NexaBold.otf);
+}
+
+@font-face {
+    font-family: uni;
+    src: url(media/fonts/Uni\ Sans\ Thin.otf);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Alegreya Sans','Courier New', Courier, monospace;
 }
 
 html, body {
-    font-family: 'Alegreya Sans','Courier New', Courier, monospace;
     font-size: 10px;
 }
 
@@ -27,18 +40,21 @@ body {
 /* Input */
 
 input {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px darkgray solid;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px white solid;
+    border-radius: 50px;
     height: 5rem;
     width: 30rem;
     color: white;
-    padding-left: 1rem;
+    padding-left: 2rem;
     font-size: 3rem;
+    position: relative;
+    top: 100px;
 }
 
 input:focus {
-    background-color: rgba(0, 0, 0, 0.6);
-    border: 1px darkgray solid;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px white solid;
     outline: 0;
 }
 
@@ -46,32 +62,67 @@ input:focus {
 
 .main {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.7rem;
+    position: relative;
+    bottom: 60px;
+}
+.main > * {
+    width: 600px;
+}
+.main > * > *{
+    color: white;
+}
+
+.header {
+    font-family: nexa, Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+}
+.name {
+    font-family: bubble, Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.hour {
+    font-family: nexa, Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+}
+.time {
+    font-family: uni, Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+}
+
+.mid {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.7rem;
 }
-
 .city {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bold;
+    font-family: nexa, Arial, Helvetica, sans-serif;
 }
-
 .temp {
-    font-size: 5rem;
+    font-size: 10rem;
     font-weight: bolder;
+    font-family: nexa, Arial, Helvetica, sans-serif;
 }
 
 .main > img {
     margin: -15px;
+    display: none;
 }
 
 .weather {
     font-size: 2.5rem;
     font-weight: bold;
-}
-
-.time {
-    font-size: 1.2rem;
+    display: none;
 }
 
 /* Extras */
@@ -98,9 +149,11 @@ input:focus {
 
 .container > * {
     font-size: 2rem;
+    font-family: nexa, Arial, Helvetica, sans-serif;
 }
 
 .container > * > .data {
     font-size: 5rem;
+    font-family: nexa, Arial, Helvetica, sans-serif;
 }
 
